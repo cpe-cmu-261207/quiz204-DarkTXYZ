@@ -29,11 +29,11 @@ btn_toggle.onclick = () => {
 }
 
 search_btn.onclick = () => {
-  /*
+  
   var l = length.value
   var words = text.innerText.split(" ")
   var selectword = []
-
+  var color = document.querySelector("#color").value
   for (const word of words) {
     if (word.length >= l)
       selectword.push(word)
@@ -41,10 +41,10 @@ search_btn.onclick = () => {
   for (const word of selectword) {
     var innerHTML = text.innerHTML
     var index = innerHTML.indexOf(word)
-    innerHTML = innerHTML.substring(0, index) + "<span class='highlight'>" + innerHTML.substring(index, index + text.length) + "</span>" + innerHTML.substring(index + text.length);
+    innerHTML = innerHTML.substring(0, index) + "<span style='background-color:"+ color + " ;'>" + innerHTML.substring(index, index + word.length) + "</span>" + innerHTML.substring(index + word.length);
     text.innerHTML = innerHTML;
   }
-  */
+  
 }
 
 
