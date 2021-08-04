@@ -10,6 +10,8 @@ const search_btn = document.querySelector("#search");
 const reset_btn = document.querySelector("#reset");
 const text = document.querySelector('#text')
 
+var textData = text.innerText;
+
 btn_toggle.onclick = () => {
   // your code here
   if (!toggle) {
@@ -29,11 +31,14 @@ btn_toggle.onclick = () => {
 }
 
 search_btn.onclick = () => {
-  
+
+  text.innerText = textData
   var l = length.value
   var words = text.innerText.split(" ")
   var selectword = []
   var color = document.querySelector("#color").value
+  
+
   for (const word of words) {
     if (word.length >= l)
       selectword.push(word)
@@ -41,12 +46,11 @@ search_btn.onclick = () => {
   for (const word of selectword) {
     var innerHTML = text.innerHTML
     var index = innerHTML.indexOf(word)
-    innerHTML = innerHTML.substring(0, index) + "<span style='background-color:"+ color + " ;'>" + innerHTML.substring(index, index + word.length) + "</span>" + innerHTML.substring(index + word.length);
+    innerHTML = innerHTML.substring(0, index) + "<span style='background-color:" + color + " ;'>" + innerHTML.substring(index, index + word.length) + "</span>" + innerHTML.substring(index + word.length);
     text.innerHTML = innerHTML;
   }
-  
-}
 
+}
 
 reset_btn.onclick = () => {
   location.reload()
